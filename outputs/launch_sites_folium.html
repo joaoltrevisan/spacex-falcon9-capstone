@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_aa27892b4193a174e2174055d102630b {
+                #map_50954447ae975880865f322a36bda9ab {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -53,20 +53,21 @@
 </head>
 <body>
     
+    <div style="position:fixed;top:12px;right:12px;z-index:9999;background:white;padding:14px;font:16px Arial"><b>Four launch-site labels in the IBM dataset</b><br>Florida: CCAFS LC-40, CCAFS SLC-40, KSC LC-39A<br>California: VAFB SLC-4E<br>Nearby Florida markers overlap at this zoom; zoom to inspect.</div>
     
-            <div class="folium-map" id="map_aa27892b4193a174e2174055d102630b" ></div>
+            <div class="folium-map" id="map_50954447ae975880865f322a36bda9ab" ></div>
         
 </body>
 <script>
     
     
-            var map_aa27892b4193a174e2174055d102630b = L.map(
-                "map_aa27892b4193a174e2174055d102630b",
+            var map_50954447ae975880865f322a36bda9ab = L.map(
+                "map_50954447ae975880865f322a36bda9ab",
                 {
-                    center: [30.0, -100.0],
+                    center: [32.0, -99.0],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 3,
+  "zoom": 4,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -78,7 +79,7 @@
 
         
     
-            var tile_layer_892e9981dba6803becab53c5b64091cd = L.tileLayer(
+            var tile_layer_b299ef499dacfc997b77b26478b1360e = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,35 +96,42 @@
             );
         
     
-            tile_layer_892e9981dba6803becab53c5b64091cd.addTo(map_aa27892b4193a174e2174055d102630b);
+            tile_layer_b299ef499dacfc997b77b26478b1360e.addTo(map_50954447ae975880865f322a36bda9ab);
         
     
-            var circle_marker_0a16b3d8ad1f11c7ede9a038f91b6e65 = L.circleMarker(
-                [28.5618571, -80.577366],
-                {"bubblingMouseEvents": true, "color": "#225ea8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#41b6c4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.416198487095663, "stroke": true, "weight": 3}
-            ).addTo(map_aa27892b4193a174e2174055d102630b);
+            var circle_eb071d53fe17ea20bc5051524e4884a8 = L.circle(
+                [28.56230197, -80.57735648],
+                {"bubblingMouseEvents": true, "color": "#137da0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#137da0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1000, "stroke": true, "weight": 3}
+            ).addTo(map_50954447ae975880865f322a36bda9ab);
         
     
-        var popup_158da48caa302714d117572e0540ab61 = L.popup({
+            var marker_29a889f158faf9ae8804f8b6b8ce065b = L.marker(
+                [28.56230197, -80.57735648],
+                {
+}
+            ).addTo(map_50954447ae975880865f322a36bda9ab);
+        
+    
+        var popup_5a63d11a1aba288950651ee7d230d95d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_bd61439635d4fbe8d9e1a609301d72b1 = $(`<div id="html_bd61439635d4fbe8d9e1a609301d72b1" style="width: 100.0%; height: 100.0%;">CCAFS SLC 40<br>Launches: 55<br>Successes: 33<br>Success rate: 60.0%<br>Nearest sampled site: KSC LC 39A (5.8 km)</div>`)[0];
-                popup_158da48caa302714d117572e0540ab61.setContent(html_bd61439635d4fbe8d9e1a609301d72b1);
+                var html_fa6d0ec04763f7c8cc65db6681a1d0b6 = $(`<div id="html_fa6d0ec04763f7c8cc65db6681a1d0b6" style="width: 100.0%; height: 100.0%;">CCAFS LC-40<br>7/26 successes (26.9%)</div>`)[0];
+                popup_5a63d11a1aba288950651ee7d230d95d.setContent(html_fa6d0ec04763f7c8cc65db6681a1d0b6);
             
         
 
-        circle_marker_0a16b3d8ad1f11c7ede9a038f91b6e65.bindPopup(popup_158da48caa302714d117572e0540ab61)
+        marker_29a889f158faf9ae8804f8b6b8ce065b.bindPopup(popup_5a63d11a1aba288950651ee7d230d95d)
         ;
 
         
     
     
-            circle_marker_0a16b3d8ad1f11c7ede9a038f91b6e65.bindTooltip(
+            marker_29a889f158faf9ae8804f8b6b8ce065b.bindTooltip(
                 `<div>
-                     CCAFS SLC 40
+                     CCAFS LC-40
                  </div>`,
                 {
   "sticky": true,
@@ -131,63 +139,39 @@
             );
         
     
-            var marker_c5a756a3351bdbb78f75313dbbbfbf31 = L.marker(
-                [28.5618571, -80.577366],
+            var circle_5ea18be532cd6932de6a1a42fd6fff4e = L.circle(
+                [28.56319718, -80.57682003],
+                {"bubblingMouseEvents": true, "color": "#137da0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#137da0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1000, "stroke": true, "weight": 3}
+            ).addTo(map_50954447ae975880865f322a36bda9ab);
+        
+    
+            var marker_83ebe65c9d315b9ae35f587b6db6c183 = L.marker(
+                [28.56319718, -80.57682003],
                 {
 }
-            ).addTo(map_aa27892b4193a174e2174055d102630b);
+            ).addTo(map_50954447ae975880865f322a36bda9ab);
         
     
-            var icon_778c55c064e15a34af7775d5c9cd0ac9 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "blue",
-  "iconColor": "white",
-  "icon": "rocket",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-            marker_c5a756a3351bdbb78f75313dbbbfbf31.bindTooltip(
-                `<div>
-                     CCAFS SLC 40: 55 launch records
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_c5a756a3351bdbb78f75313dbbbfbf31.setIcon(icon_778c55c064e15a34af7775d5c9cd0ac9);
-            
-    
-            var circle_marker_d98f9aa79b114f0620c3ef93ad9efa19 = L.circleMarker(
-                [28.608058500000002, -80.6039558],
-                {"bubblingMouseEvents": true, "color": "#225ea8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#41b6c4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.69041575982343, "stroke": true, "weight": 3}
-            ).addTo(map_aa27892b4193a174e2174055d102630b);
-        
-    
-        var popup_d93aa294523f742ae8414a8f1708be3a = L.popup({
+        var popup_e6032632994a5695a72642989775377a = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_bd148e4bd83b737ab871a46b35a8fedb = $(`<div id="html_bd148e4bd83b737ab871a46b35a8fedb" style="width: 100.0%; height: 100.0%;">KSC LC 39A<br>Launches: 22<br>Successes: 17<br>Success rate: 77.3%<br>Nearest sampled site: CCAFS SLC 40 (5.8 km)</div>`)[0];
-                popup_d93aa294523f742ae8414a8f1708be3a.setContent(html_bd148e4bd83b737ab871a46b35a8fedb);
+                var html_8ebbac5eb0510def7b77a232fa887c34 = $(`<div id="html_8ebbac5eb0510def7b77a232fa887c34" style="width: 100.0%; height: 100.0%;">CCAFS SLC-40<br>3/7 successes (42.9%)</div>`)[0];
+                popup_e6032632994a5695a72642989775377a.setContent(html_8ebbac5eb0510def7b77a232fa887c34);
             
         
 
-        circle_marker_d98f9aa79b114f0620c3ef93ad9efa19.bindPopup(popup_d93aa294523f742ae8414a8f1708be3a)
+        marker_83ebe65c9d315b9ae35f587b6db6c183.bindPopup(popup_e6032632994a5695a72642989775377a)
         ;
 
         
     
     
-            circle_marker_d98f9aa79b114f0620c3ef93ad9efa19.bindTooltip(
+            marker_83ebe65c9d315b9ae35f587b6db6c183.bindTooltip(
                 `<div>
-                     KSC LC 39A
+                     CCAFS SLC-40
                  </div>`,
                 {
   "sticky": true,
@@ -195,63 +179,39 @@
             );
         
     
-            var marker_f2a2e96de4f968f2b6030defb51b918e = L.marker(
-                [28.608058500000002, -80.6039558],
+            var circle_12871f4e4b22a814a579cc13e9e03dd9 = L.circle(
+                [28.57325457, -80.64689529],
+                {"bubblingMouseEvents": true, "color": "#137da0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#137da0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1000, "stroke": true, "weight": 3}
+            ).addTo(map_50954447ae975880865f322a36bda9ab);
+        
+    
+            var marker_28d2970e3884a263b5cb6e0aa5c1a70a = L.marker(
+                [28.57325457, -80.64689529],
                 {
 }
-            ).addTo(map_aa27892b4193a174e2174055d102630b);
+            ).addTo(map_50954447ae975880865f322a36bda9ab);
         
     
-            var icon_856176fdfbbc5b8a665e975a94af0eee = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "blue",
-  "iconColor": "white",
-  "icon": "rocket",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-            marker_f2a2e96de4f968f2b6030defb51b918e.bindTooltip(
-                `<div>
-                     KSC LC 39A: 22 launch records
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_f2a2e96de4f968f2b6030defb51b918e.setIcon(icon_856176fdfbbc5b8a665e975a94af0eee);
-            
-    
-            var circle_marker_50f56a589781b389341a5efbe7ca6946 = L.circleMarker(
-                [34.632093, -120.61082900000001],
-                {"bubblingMouseEvents": true, "color": "#225ea8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#41b6c4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.60555127546399, "stroke": true, "weight": 3}
-            ).addTo(map_aa27892b4193a174e2174055d102630b);
-        
-    
-        var popup_e00fae83b0223815aa1b496f75a0c472 = L.popup({
+        var popup_0748c4f3d8a256b3f320f12cabb4ebd7 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_bfb6e1039c3a1464bc54b3b3f1c73638 = $(`<div id="html_bfb6e1039c3a1464bc54b3b3f1c73638" style="width: 100.0%; height: 100.0%;">VAFB SLC 4E<br>Launches: 13<br>Successes: 10<br>Success rate: 76.9%<br>Nearest sampled site: KSC LC 39A (3821.6 km)</div>`)[0];
-                popup_e00fae83b0223815aa1b496f75a0c472.setContent(html_bfb6e1039c3a1464bc54b3b3f1c73638);
+                var html_f43dc6b7f4715afda45ccf99f7fe4e46 = $(`<div id="html_f43dc6b7f4715afda45ccf99f7fe4e46" style="width: 100.0%; height: 100.0%;">KSC LC-39A<br>10/13 successes (76.9%)</div>`)[0];
+                popup_0748c4f3d8a256b3f320f12cabb4ebd7.setContent(html_f43dc6b7f4715afda45ccf99f7fe4e46);
             
         
 
-        circle_marker_50f56a589781b389341a5efbe7ca6946.bindPopup(popup_e00fae83b0223815aa1b496f75a0c472)
+        marker_28d2970e3884a263b5cb6e0aa5c1a70a.bindPopup(popup_0748c4f3d8a256b3f320f12cabb4ebd7)
         ;
 
         
     
     
-            circle_marker_50f56a589781b389341a5efbe7ca6946.bindTooltip(
+            marker_28d2970e3884a263b5cb6e0aa5c1a70a.bindTooltip(
                 `<div>
-                     VAFB SLC 4E
+                     KSC LC-39A
                  </div>`,
                 {
   "sticky": true,
@@ -259,35 +219,44 @@
             );
         
     
-            var marker_2bbb63f1637a76587ea3053246b8864e = L.marker(
-                [34.632093, -120.61082900000001],
-                {
-}
-            ).addTo(map_aa27892b4193a174e2174055d102630b);
+            var circle_0b2f525dcd80e35759447f4870c74097 = L.circle(
+                [34.63283416, -120.6107455],
+                {"bubblingMouseEvents": true, "color": "#137da0", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#137da0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1000, "stroke": true, "weight": 3}
+            ).addTo(map_50954447ae975880865f322a36bda9ab);
         
     
-            var icon_c3ee66b6f87503dc74389ec2f4ceb136 = L.AwesomeMarkers.icon(
+            var marker_af995e8ae4de9e329ceaf9d7973e478f = L.marker(
+                [34.63283416, -120.6107455],
                 {
-  "markerColor": "blue",
-  "iconColor": "white",
-  "icon": "rocket",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
 }
-            );
+            ).addTo(map_50954447ae975880865f322a36bda9ab);
         
     
-            marker_2bbb63f1637a76587ea3053246b8864e.bindTooltip(
-                `<div>
-                     VAFB SLC 4E: 13 launch records
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
+        var popup_730371129c6c2c560b8afce67bc45e27 = L.popup({
+  "maxWidth": "100%",
+});
+
         
-    
-                marker_2bbb63f1637a76587ea3053246b8864e.setIcon(icon_c3ee66b6f87503dc74389ec2f4ceb136);
             
+                var html_c5eb98300e9f3279932f2f7e5afae545 = $(`<div id="html_c5eb98300e9f3279932f2f7e5afae545" style="width: 100.0%; height: 100.0%;">VAFB SLC-4E<br>4/10 successes (40.0%)</div>`)[0];
+                popup_730371129c6c2c560b8afce67bc45e27.setContent(html_c5eb98300e9f3279932f2f7e5afae545);
+            
+        
+
+        marker_af995e8ae4de9e329ceaf9d7973e478f.bindPopup(popup_730371129c6c2c560b8afce67bc45e27)
+        ;
+
+        
+    
+    
+            marker_af995e8ae4de9e329ceaf9d7973e478f.bindTooltip(
+                `<div>
+                     VAFB SLC-4E
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
 </script>
 </html>

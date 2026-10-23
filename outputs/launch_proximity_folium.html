@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ddb03db9e2046c6dc3b0541e36d8355f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>
+    
+    <div style="position:fixed;top:12px;right:12px;z-index:9999;background:white;padding:14px;font:16px Arial"><b>CCAFS LC-40 proximity</b><br>Coastline point: 0.925 km<br>Samuel C. Phillips Parkway: 0.645 km<br>Haversine straight-line distances<br>Points selected visually on OpenStreetMap<br>Approximate, not surveyed nearest distances</div>
+    
+            <div class="folium-map" id="map_ddb03db9e2046c6dc3b0541e36d8355f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ddb03db9e2046c6dc3b0541e36d8355f = L.map(
+                "map_ddb03db9e2046c6dc3b0541e36d8355f",
+                {
+                    center: [28.563, -80.573],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 16,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7599f148aa77db6e85b8df2f597b955f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7599f148aa77db6e85b8df2f597b955f.addTo(map_ddb03db9e2046c6dc3b0541e36d8355f);
+        
+    
+            var marker_4d9c8b85e2dfb08c2cc037497c7369e8 = L.marker(
+                [28.56230197, -80.57735648],
+                {
+}
+            ).addTo(map_ddb03db9e2046c6dc3b0541e36d8355f);
+        
+    
+        var popup_fd42352006370b1bcdb5eef0b005adc8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_650eac328187df2351e865614de5e80a = $(`<div id="html_650eac328187df2351e865614de5e80a" style="width: 100.0%; height: 100.0%;">Launch pad</div>`)[0];
+                popup_fd42352006370b1bcdb5eef0b005adc8.setContent(html_650eac328187df2351e865614de5e80a);
+            
+        
+
+        marker_4d9c8b85e2dfb08c2cc037497c7369e8.bindPopup(popup_fd42352006370b1bcdb5eef0b005adc8)
+        ;
+
+        
+    
+    
+            marker_4d9c8b85e2dfb08c2cc037497c7369e8.bindTooltip(
+                `<div>
+                     CCAFS LC-40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f82eaa1b5fb8abea8a1e85e9f318590 = L.circleMarker(
+                [28.56268, -80.56789],
+                {"bubblingMouseEvents": true, "color": "#e35f35", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e35f35", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_ddb03db9e2046c6dc3b0541e36d8355f);
+        
+    
+            circle_marker_7f82eaa1b5fb8abea8a1e85e9f318590.bindTooltip(
+                `<div>
+                     Coastline: 0.925 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_804804f836e05ca44c96322a4431d216 = L.polyline(
+                [[28.56230197, -80.57735648], [28.56268, -80.56789]],
+                {"bubblingMouseEvents": true, "color": "#e35f35", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#e35f35", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_ddb03db9e2046c6dc3b0541e36d8355f);
+        
+    
+            poly_line_804804f836e05ca44c96322a4431d216.bindTooltip(
+                `<div>
+                     Coastline: 0.925 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee88618d520b80a9fe88c1ee0e14466f = L.circleMarker(
+                [28.56268, -80.57077],
+                {"bubblingMouseEvents": true, "color": "#127c9a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#127c9a", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_ddb03db9e2046c6dc3b0541e36d8355f);
+        
+    
+            circle_marker_ee88618d520b80a9fe88c1ee0e14466f.bindTooltip(
+                `<div>
+                     Samuel C. Phillips Parkway: 0.645 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7fdc17a351970df3744970ceedd038be = L.polyline(
+                [[28.56230197, -80.57735648], [28.56268, -80.57077]],
+                {"bubblingMouseEvents": true, "color": "#127c9a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#127c9a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_ddb03db9e2046c6dc3b0541e36d8355f);
+        
+    
+            poly_line_7fdc17a351970df3744970ceedd038be.bindTooltip(
+                `<div>
+                     Samuel C. Phillips Parkway: 0.645 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var mouse_position_b57c99acaab6fd087e77e35e1b8a3bbe = new L.Control.MousePosition(
+                {
+  "position": "bottomleft",
+  "separator": " : ",
+  "emptyString": "Unavailable",
+  "lngFirst": false,
+  "numDigits": 5,
+  "prefix": "",
+}
+            );
+            mouse_position_b57c99acaab6fd087e77e35e1b8a3bbe.options["latFormatter"] =
+                undefined;
+            mouse_position_b57c99acaab6fd087e77e35e1b8a3bbe.options["lngFormatter"] =
+                undefined;
+            map_ddb03db9e2046c6dc3b0541e36d8355f.addControl(mouse_position_b57c99acaab6fd087e77e35e1b8a3bbe);
+        
+</script>
+</html>

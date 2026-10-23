@@ -1,38 +1,29 @@
-"""Plotly Dash dashboard for the 90-row course sample. Requires Dash/Plotly."""
+"""IBM Dash lab: success-count pie, site outcome ratio, payload range slider."""
 from pathlib import Path
-import pandas as pd
-import plotly.express as px
-from dash import Dash, Input, Output, dcc, html
-
-ROOT = Path(__file__).resolve().parents[1]
-DATA = pd.read_csv(ROOT / "data/processed/course_model_dataset.csv")
-app = Dash(__name__)
-sites = sorted(DATA.LaunchSite.unique())
-orbits = sorted(DATA.Orbit.unique())
-app.layout = html.Div([
-    html.H1("SpaceX Falcon 9 - First-stage landing outcomes"),
-    html.P("IBM Skills Network course sample: 90 launches through November 2020."),
-    html.Label("Launch site"), dcc.Dropdown(["All"] + sites, "All", id="site"),
-    html.Label("Orbit"), dcc.Dropdown(["All"] + orbits, "All", id="orbit"),
-    dcc.Graph(id="outcomes"), dcc.Graph(id="payload"),
-])
-
-@app.callback(Output("outcomes", "figure"), Output("payload", "figure"),
-              Input("site", "value"), Input("orbit", "value"))
-def update(site, orbit):
-    frame = DATA.copy()
-    if site != "All": frame = frame[frame.LaunchSite == site]
-    if orbit != "All": frame = frame[frame.Orbit == orbit]
-    counts = frame.Class.map({0: "Failure", 1: "Success"}).value_counts().rename_axis("Outcome").reset_index(name="Launches")
-    f1 = px.pie(counts, names="Outcome", values="Launches", title="Launch outcomes in filtered sample",
-                color="Outcome", color_discrete_map={"Failure": "#F36B3F", "Success": "#1677A8"})
-    f2 = px.scatter(frame, x="PayloadMass", y="Class", color="Class", hover_data=["FlightNumber", "LaunchSite", "Orbit"],
-                    title="Payload mass versus landing outcome",
-                    labels={"PayloadMass": "Payload mass (kg)", "Class": "Landing outcome (0 = failure, 1 = success)"},
-                    color_discrete_map={0: "#F36B3F", 1: "#1677A8"})
-    f2.update_yaxes(tickmode="array", tickvals=[0, 1], ticktext=["Failure", "Success"])
-    return f1, f2
-
-if __name__ == "__main__":
-    app.run(debug=False)
-
+import pandas as pd,plotly.express as px
+from dash import Dash,Input,Output,dcc,html
+ROOT=Path(__file__).resolve().parents[1]
+DATA=pd.read_csv(ROOT/'data/raw/spacex_launch_dash.csv')
+app=Dash(__name__)
+app.layout=html.Div([
+ html.H1('SpaceX launch outcomes',style={'margin':'8px 0','color':'#08253e'}),
+ html.P('IBM Dash laboratory sample: 56 launch records. Outcome 1 = success, 0 = failure.'),
+ html.Label('Launch site'),dcc.Dropdown(['All']+sorted(DATA['Launch Site'].unique()),'All',id='site',clearable=False),
+ html.Div([dcc.Graph(id='success-pie',style={'width':'44%'}),dcc.Graph(id='payload-scatter',style={'width':'56%'})],style={'display':'flex'}),
+ html.Label('Payload range (kg)'),dcc.RangeSlider(0,10000,100,value=[0,10000],id='payload-range',marks={i:str(i) for i in range(0,10001,2000)},tooltip={'placement':'bottom','always_visible':True}),
+ html.Div(id='sample-count',style={'paddingTop':'20px'})],style={'fontFamily':'Arial','maxWidth':'1360px','margin':'auto','padding':'15px'})
+@app.callback(Output('success-pie','figure'),Output('payload-scatter','figure'),Output('sample-count','children'),Input('site','value'),Input('payload-range','value'))
+def update(site,payload):
+ frame=DATA if site=='All' else DATA[DATA['Launch Site']==site]
+ if site=='All':
+  counts=frame[frame['class']==1].groupby('Launch Site',as_index=False).size()
+  pie=px.pie(counts,names='Launch Site',values='size',title='Successful launches by site (24 total)')
+ else:
+  counts=frame['class'].map({0:'Failure',1:'Success'}).value_counts().rename_axis('Outcome').reset_index(name='Launches')
+  pie=px.pie(counts,names='Outcome',values='Launches',color='Outcome',color_discrete_map={'Failure':'#eb6b45','Success':'#1677a8'},title=f'{site}: success / failure ratio')
+ selected=frame[frame['Payload Mass (kg)'].between(payload[0],payload[1])]
+ scatter=px.scatter(selected,x='Payload Mass (kg)',y='class',color='Booster Version Category',hover_data=['Flight Number','Launch Site'],title='Payload versus launch outcome',labels={'class':'Landing outcome'})
+ scatter.update_yaxes(tickvals=[0,1],ticktext=['Failure (0)','Success (1)'],range=[-.15,1.15])
+ for fig in [pie,scatter]:fig.update_layout(height=430,margin=dict(t=60,l=45,r=20,b=45),font=dict(size=14),template='plotly_white')
+ return pie,scatter,f'Scatter: {len(selected)} records in payload range {payload[0]:,}-{payload[1]:,} kg. Pie chart uses all payloads at the selected site.'
+if __name__=='__main__':app.run(host='127.0.0.1',port=8050,debug=False)

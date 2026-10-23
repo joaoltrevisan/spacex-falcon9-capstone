@@ -1,0 +1,9 @@
+Landing_Outcome,launches,rank
+No attempt,10,1
+Failure (drone ship),5,2
+Success (drone ship),5,2
+Controlled (ocean),3,3
+Success (ground pad),3,3
+Failure (parachute),2,4
+Uncontrolled (ocean),2,4
+Precluded (drone ship),1,5

@@ -1,0 +1,48 @@
+{
+  "records": 56,
+  "sites": [
+    {
+      "Launch Site": "CCAFS LC-40",
+      "Lat": 28.56230197,
+      "Long": -80.57735648,
+      "launches": 26,
+      "successes": 7
+    },
+    {
+      "Launch Site": "CCAFS SLC-40",
+      "Lat": 28.56319718,
+      "Long": -80.57682003,
+      "launches": 7,
+      "successes": 3
+    },
+    {
+      "Launch Site": "KSC LC-39A",
+      "Lat": 28.57325457,
+      "Long": -80.64689529,
+      "launches": 13,
+      "successes": 10
+    },
+    {
+      "Launch Site": "VAFB SLC-4E",
+      "Lat": 34.63283416,
+      "Long": -120.6107455,
+      "launches": 10,
+      "successes": 4
+    }
+  ],
+  "coastline_point": [
+    28.56268,
+    -80.56789
+  ],
+  "launch_pad": [
+    28.56230197,
+    -80.57735648
+  ],
+  "distance_km": 0.9254712159290069,
+  "road_point": [
+    28.56268,
+    -80.57077
+  ],
+  "road_distance_km": 0.6446213093048845,
+  "point_method": "Visual OpenStreetMap selection using Folium MousePosition, 2026-10-23"
+}

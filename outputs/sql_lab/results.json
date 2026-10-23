@@ -1,0 +1,215 @@
+{
+  "01_unique_sites": [
+    {
+      "Launch_Site": "CCAFS LC-40"
+    },
+    {
+      "Launch_Site": "CCAFS SLC-40"
+    },
+    {
+      "Launch_Site": "KSC LC-39A"
+    },
+    {
+      "Launch_Site": "VAFB SLC-4E"
+    }
+  ],
+  "02_cca_records": [
+    {
+      "Date": "2010-06-04",
+      "Booster_Version": "F9 v1.0  B0003",
+      "Launch_Site": "CCAFS LC-40",
+      "PAYLOAD_MASS__KG_": 0
+    },
+    {
+      "Date": "2010-12-08",
+      "Booster_Version": "F9 v1.0  B0004",
+      "Launch_Site": "CCAFS LC-40",
+      "PAYLOAD_MASS__KG_": 0
+    },
+    {
+      "Date": "2012-05-22",
+      "Booster_Version": "F9 v1.0  B0005",
+      "Launch_Site": "CCAFS LC-40",
+      "PAYLOAD_MASS__KG_": 525
+    },
+    {
+      "Date": "2012-10-08",
+      "Booster_Version": "F9 v1.0  B0006",
+      "Launch_Site": "CCAFS LC-40",
+      "PAYLOAD_MASS__KG_": 500
+    },
+    {
+      "Date": "2013-03-01",
+      "Booster_Version": "F9 v1.0  B0007",
+      "Launch_Site": "CCAFS LC-40",
+      "PAYLOAD_MASS__KG_": 677
+    }
+  ],
+  "03_nasa_payload": [
+    {
+      "Customer": "NASA (CRS)",
+      "payload_kg": 45596
+    }
+  ],
+  "04_f9_v11_average": [
+    {
+      "launches": 15,
+      "mean_payload_kg": 2534.67
+    }
+  ],
+  "05_first_ground_landing": [
+    {
+      "first_successful_ground_landing": "2015-12-22"
+    }
+  ],
+  "06_drone_4000_6000": [
+    {
+      "Date": "2016-05-06",
+      "Booster_Version": "F9 FT B1022",
+      "PAYLOAD_MASS__KG_": 4696
+    },
+    {
+      "Date": "2016-08-14",
+      "Booster_Version": "F9 FT B1026",
+      "PAYLOAD_MASS__KG_": 4600
+    },
+    {
+      "Date": "2017-03-30",
+      "Booster_Version": "F9 FT  B1021.2",
+      "PAYLOAD_MASS__KG_": 5300
+    },
+    {
+      "Date": "2017-10-11",
+      "Booster_Version": "F9 FT  B1031.2",
+      "PAYLOAD_MASS__KG_": 5200
+    }
+  ],
+  "07_mission_outcomes": [
+    {
+      "Mission_Outcome": "Success",
+      "missions": 99
+    },
+    {
+      "Mission_Outcome": "Success (payload status unclear)",
+      "missions": 1
+    },
+    {
+      "Mission_Outcome": "Failure (in flight)",
+      "missions": 1
+    }
+  ],
+  "08_max_payload_boosters": [
+    {
+      "Booster_Version": "F9 B5 B1048.4",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1049.4",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1051.3",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1056.4",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1048.5",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1051.4",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1049.5",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1060.2",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1058.3",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1051.6",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1060.3",
+      "PAYLOAD_MASS__KG_": 15600
+    },
+    {
+      "Booster_Version": "F9 B5 B1049.7",
+      "PAYLOAD_MASS__KG_": 15600
+    }
+  ],
+  "09_2015_drone_failures": [
+    {
+      "Date": "2015-01-10",
+      "month": "01",
+      "Booster_Version": "F9 v1.1 B1012",
+      "Launch_Site": "CCAFS LC-40",
+      "Landing_Outcome": "Failure (drone ship)"
+    },
+    {
+      "Date": "2015-04-14",
+      "month": "04",
+      "Booster_Version": "F9 v1.1 B1015",
+      "Launch_Site": "CCAFS LC-40",
+      "Landing_Outcome": "Failure (drone ship)"
+    }
+  ],
+  "10_rank_outcomes": [
+    {
+      "Landing_Outcome": "No attempt",
+      "launches": 10,
+      "rank": 1
+    },
+    {
+      "Landing_Outcome": "Failure (drone ship)",
+      "launches": 5,
+      "rank": 2
+    },
+    {
+      "Landing_Outcome": "Success (drone ship)",
+      "launches": 5,
+      "rank": 2
+    },
+    {
+      "Landing_Outcome": "Controlled (ocean)",
+      "launches": 3,
+      "rank": 3
+    },
+    {
+      "Landing_Outcome": "Success (ground pad)",
+      "launches": 3,
+      "rank": 3
+    },
+    {
+      "Landing_Outcome": "Failure (parachute)",
+      "launches": 2,
+      "rank": 4
+    },
+    {
+      "Landing_Outcome": "Uncontrolled (ocean)",
+      "launches": 2,
+      "rank": 4
+    },
+    {
+      "Landing_Outcome": "Precluded (drone ship)",
+      "launches": 1,
+      "rank": 5
+    }
+  ],
+  "nasa_all_mentions": [
+    {
+      "launches": 32,
+      "payload_kg": 107010
+    }
+  ]
+}

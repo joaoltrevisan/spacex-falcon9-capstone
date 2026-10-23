@@ -1,47 +1,64 @@
 # IBM Applied Data Science Capstone - Falcon 9 Landing Prediction
 
-This project analyzes whether a Falcon 9 first stage lands successfully. The final 23-slide presentation is `reports/Relatorio_Capstone.pdf` (editable source: `reports/Relatorio_Capstone.pptx`). The notebooks, scripts, data and analysis outputs are included alongside it.
+**Current submission:** [40-page final PDF](reports/Capstone_Final_Revisado.pdf).
 
 Public repository: https://github.com/joaoltrevisan/spacex-falcon9-capstone
 
-## Project contents
+The PDF uses visible, selectable text, clickable repository/notebook links, six EDA charts, all ten SQL laboratory queries and results, three Folium screenshots, three Dash screenshots, model comparison, confusion matrix and conclusions. Seven notebooks have been executed without cell errors.
 
-| Stage | Included work | Verification |
-|---|---|---|
-| Presentation and executive summary | `reports/Relatorio_Capstone.pdf` and `.pptx` | 23 slides aligned to the Mark criteria, including API, scraping, wrangling, visual and SQL EDA, Folium, Dash, and model results |
-| SpaceX API collection | Archived IBM API JSON and `src/collect_api.py` | 107 API launch records normalized into 18 fields |
-| Web scraping | Dated Wikipedia revision, scraper, and CSV | 97 dated launch rows through 2020-11-05 |
-| Wrangling and target | IBM `dataset_part_2.csv` and supplied `dataset_part_3.csv` | 90 rows aligned by flight number and decoded categories; target comes from the labeled IBM file |
-| EDA visualizations | Original course EDA notebook and figures | Original notebook outputs preserved in `outputs/figures/` |
-| SQL EDA | SQLite queries and result CSV files | Site, orbit, payload and year-by-year launch/success summaries |
-| Folium map | `src/build_folium_map.py` and `outputs/launch_sites_folium.html` | Launch counts, rates, markers and nearest-site distances |
-| Plotly Dash | `src/dash_app.py` | Filters drive an outcome pie chart and payload-versus-outcome scatter plot |
-| Predictive analysis | `src/analyze_model.py`, notebook, metrics and confusion matrix | Four classifiers tuned with five-fold stratified GridSearchCV; evaluated on a stratified 18-row holdout |
-| Conclusion | Final report | Based on the saved analysis results, with sample-size limits stated |
+The older `Relatorio_Capstone.pdf`, `.pptx` and `.md` are superseded historical drafts; they do not contain this correction. Do not use them for the current submission. The revised PDF source is `src/build_revised_report.py`; the earlier presentation generators are legacy drafts.
 
-## Data and scope
+## Evidence and data boundaries
 
-- `data/processed/dataset_part_3.csv` is the user-supplied 90 x 80 one-hot feature matrix; it does not contain `Class`.
-- `data/raw/dataset_part_2.csv` is the matching labeled IBM course table. The analysis checks row order and decoded categories before using its target labels.
-- The archived SpaceX API response has 107 records. The archived Wikipedia tables yield 97 numbered launches through 2020-11-05. They have different coverage and are kept separate from IBM's fixed 90-row modeling sample.
-- The Wikipedia source is pinned to revision 987426997 (2020-11-06) so future edits do not change the scrape.
+| Stage | Source and result |
+|---|---|
+| API | Archived IBM API JSON; 107 records normalized into 18 fields; no live API enrichment claimed |
+| Web scraping | Wikipedia revision 987426997; 97 dated rows through 2020-11-05 |
+| Wrangling / modeling | 90-row IBM labeled table and supplied 90 × 80 encoded matrix; all feature values, flight order and categories checked |
+| EDA | Six required chart types from the 90-row modeling sample |
+| SQL | Separate 101-row `Spacex_SQL.csv`; ten exact lab queries in `src/sql_lab.py`; result CSVs and SQL in `outputs/sql_lab/` |
+| Folium | Separate 56-record geographic dataset; site map, color-coded outcomes, and approximate coastline/road distances |
+| Dash | Separate 56-record dashboard dataset; site counts/ratios and interactive payload range |
+| Models | Four classifiers; five-fold stratified training CV; separate stratified 18-row holdout |
 
-## Run the project
+These sources have different coverage. Their counts and success rates must not be combined. Mission outcome and landing outcome are distinct concepts.
 
-Create a virtual environment, install dependencies, then run:
+## Reproduce
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements.txt
 python src/collect_api.py
 python src/scrape_wikipedia.py
 python src/analyze_model.py
+python src/sql_lab.py
 python src/build_folium_map.py
+python src/build_revised_report.py
+python src/dash_app.py
 ```
 
-The provided presentation PDF is ready to upload to Mark. The editable PowerPoint is included for changes.
+Open http://127.0.0.1:8050 for Dash. Open the three `outputs/launch_*_folium.html` maps in a browser; external map tiles require internet access. Browser screenshots used by the PDF are committed under `outputs/figures/`. The PDF builder uses those verified screenshots rather than creating new browser captures.
 
-Start the dashboard from the project root with `python src/dash_app.py`, then open `http://127.0.0.1:8050`.
+The seven notebooks in `notebooks/` use local data and display executed outputs. `src/build_project_artifacts.py` is a historical draft generator and should not be used to recreate these notebooks.
 
-## Mark and GitHub
+## Geographic measurement
 
-The Mark rubric asks for both the presentation PDF and a GitHub repository URL. The public repository above contains the completed project files. The PDF has not been submitted to Mark.
+The map uses the course dataset coordinates. Approximate points were selected on visible OpenStreetMap tiles using Folium MousePosition on 23 October 2026: coastline (28.56268, -80.56789), Samuel C. Phillips Parkway (28.56268, -80.57077). Haversine distances from CCAFS LC-40 are 0.925 km and 0.645 km. These are straight-line distances to selected points, not surveyed nearest distances or driving routes.
+
+## Primary sources
+
+IBM source base: https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/
+
+- `datasets/API_call_spacex_api.json`
+- `datasets/dataset_part_2.csv`
+- `datasets/spacex_launch_geo.csv`
+- `datasets/spacex_launch_dash.csv`
+- `labs/module_2/data/Spacex.csv`
+- `labs/module_5/ds-capstone-template-coursera.pptx`
+- `labs/module_5/Submission_Overview_and_Instructions.pdf`
+- Wikipedia: https://en.wikipedia.org/w/index.php?oldid=987426997
+
+## Results
+
+Decision Tree selected by CV accuracy (0.877); holdout accuracy 0.833, precision 0.846, recall 0.917 and F1 0.880. Confusion matrix: `[[4, 2], [1, 11]]`. The holdout contains only 18 observations, so the ranking is tentative.

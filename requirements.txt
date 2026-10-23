@@ -10,3 +10,7 @@ folium>=0.15
 plotly>=5.18
 dash>=2.14
 reportlab>=4.0
+
+nbformat>=5.9
+nbclient>=0.9
+ipykernel>=6.0
