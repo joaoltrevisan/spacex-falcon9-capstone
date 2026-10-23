@@ -1,0 +1,451 @@
+{
+  "source_features": "user-provided dataset_part_3.csv (90 rows, 80 columns)",
+  "target_source": "Class column from downloaded official IBM course dataset_part_2.csv",
+  "rows": 90,
+  "feature_columns": 80,
+  "class_counts": {
+    "0": 30,
+    "1": 60
+  },
+  "site_success": [
+    {
+      "LaunchSite": "KSC LC 39A",
+      "launches": 22,
+      "success_rate": 0.7727272727272727
+    },
+    {
+      "LaunchSite": "VAFB SLC 4E",
+      "launches": 13,
+      "success_rate": 0.7692307692307693
+    },
+    {
+      "LaunchSite": "CCAFS SLC 40",
+      "launches": 55,
+      "success_rate": 0.6
+    }
+  ],
+  "orbit_success": [
+    {
+      "Orbit": "ES-L1",
+      "launches": 1,
+      "success_rate": 1.0
+    },
+    {
+      "Orbit": "GEO",
+      "launches": 1,
+      "success_rate": 1.0
+    },
+    {
+      "Orbit": "HEO",
+      "launches": 1,
+      "success_rate": 1.0
+    },
+    {
+      "Orbit": "SSO",
+      "launches": 5,
+      "success_rate": 1.0
+    },
+    {
+      "Orbit": "VLEO",
+      "launches": 14,
+      "success_rate": 0.8571428571428571
+    },
+    {
+      "Orbit": "LEO",
+      "launches": 7,
+      "success_rate": 0.7142857142857143
+    },
+    {
+      "Orbit": "MEO",
+      "launches": 3,
+      "success_rate": 0.6666666666666666
+    },
+    {
+      "Orbit": "PO",
+      "launches": 9,
+      "success_rate": 0.6666666666666666
+    },
+    {
+      "Orbit": "ISS",
+      "launches": 21,
+      "success_rate": 0.6190476190476191
+    },
+    {
+      "Orbit": "GTO",
+      "launches": 27,
+      "success_rate": 0.5185185185185185
+    },
+    {
+      "Orbit": "SO",
+      "launches": 1,
+      "success_rate": 0.0
+    }
+  ],
+  "sql": {
+    "site_success": [
+      {
+        "LaunchSite": "KSC LC 39A",
+        "launches": 22,
+        "success_rate": 0.773
+      },
+      {
+        "LaunchSite": "VAFB SLC 4E",
+        "launches": 13,
+        "success_rate": 0.769
+      },
+      {
+        "LaunchSite": "CCAFS SLC 40",
+        "launches": 55,
+        "success_rate": 0.6
+      }
+    ],
+    "orbit_success": [
+      {
+        "Orbit": "SSO",
+        "launches": 5,
+        "success_rate": 1.0
+      },
+      {
+        "Orbit": "HEO",
+        "launches": 1,
+        "success_rate": 1.0
+      },
+      {
+        "Orbit": "GEO",
+        "launches": 1,
+        "success_rate": 1.0
+      },
+      {
+        "Orbit": "ES-L1",
+        "launches": 1,
+        "success_rate": 1.0
+      },
+      {
+        "Orbit": "VLEO",
+        "launches": 14,
+        "success_rate": 0.857
+      },
+      {
+        "Orbit": "LEO",
+        "launches": 7,
+        "success_rate": 0.714
+      },
+      {
+        "Orbit": "PO",
+        "launches": 9,
+        "success_rate": 0.667
+      },
+      {
+        "Orbit": "MEO",
+        "launches": 3,
+        "success_rate": 0.667
+      },
+      {
+        "Orbit": "ISS",
+        "launches": 21,
+        "success_rate": 0.619
+      },
+      {
+        "Orbit": "GTO",
+        "launches": 27,
+        "success_rate": 0.519
+      },
+      {
+        "Orbit": "SO",
+        "launches": 1,
+        "success_rate": 0.0
+      }
+    ],
+    "payload_by_success": [
+      {
+        "Class": 0,
+        "launches": 30,
+        "mean_payload_kg": 4784.6
+      },
+      {
+        "Class": 1,
+        "launches": 60,
+        "mean_payload_kg": 6765.2
+      }
+    ],
+    "year_success": [
+      {
+        "year": 2010,
+        "launches": 1,
+        "successful_launches": 0,
+        "success_rate": 0.0
+      },
+      {
+        "year": 2012,
+        "launches": 1,
+        "successful_launches": 0,
+        "success_rate": 0.0
+      },
+      {
+        "year": 2013,
+        "launches": 3,
+        "successful_launches": 0,
+        "success_rate": 0.0
+      },
+      {
+        "year": 2014,
+        "launches": 6,
+        "successful_launches": 2,
+        "success_rate": 0.333
+      },
+      {
+        "year": 2015,
+        "launches": 6,
+        "successful_launches": 2,
+        "success_rate": 0.333
+      },
+      {
+        "year": 2016,
+        "launches": 8,
+        "successful_launches": 5,
+        "success_rate": 0.625
+      },
+      {
+        "year": 2017,
+        "launches": 18,
+        "successful_launches": 15,
+        "success_rate": 0.833
+      },
+      {
+        "year": 2018,
+        "launches": 18,
+        "successful_launches": 11,
+        "success_rate": 0.611
+      },
+      {
+        "year": 2019,
+        "launches": 10,
+        "successful_launches": 9,
+        "success_rate": 0.9
+      },
+      {
+        "year": 2020,
+        "launches": 19,
+        "successful_launches": 16,
+        "success_rate": 0.842
+      }
+    ]
+  },
+  "models": {
+    "split": {
+      "train_n": 72,
+      "test_n": 18,
+      "random_state": 2,
+      "stratified": true,
+      "test_indices": [
+        50,
+        16,
+        20,
+        12,
+        14,
+        43,
+        19,
+        21,
+        17,
+        75,
+        57,
+        81,
+        76,
+        24,
+        88,
+        55,
+        10,
+        38
+      ]
+    },
+    "test_actual": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    "predictions": {
+      "Logistic Regression": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "SVM": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "KNN": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "Decision Tree": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    "metrics": {
+      "Logistic Regression": {
+        "accuracy": 0.7777777777777778,
+        "precision": 0.7857142857142857,
+        "recall": 0.9166666666666666,
+        "f1": 0.8461538461538461,
+        "tn": 3,
+        "fp": 3,
+        "fn": 1,
+        "tp": 11
+      },
+      "SVM": {
+        "accuracy": 0.7777777777777778,
+        "precision": 0.7857142857142857,
+        "recall": 0.9166666666666666,
+        "f1": 0.8461538461538461,
+        "tn": 3,
+        "fp": 3,
+        "fn": 1,
+        "tp": 11
+      },
+      "KNN": {
+        "accuracy": 0.6666666666666666,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "tn": 0,
+        "fp": 6,
+        "fn": 0,
+        "tp": 12
+      },
+      "Decision Tree": {
+        "accuracy": 0.8333333333333334,
+        "precision": 0.8461538461538461,
+        "recall": 0.9166666666666666,
+        "f1": 0.8799999999999999,
+        "tn": 4,
+        "fp": 2,
+        "fn": 1,
+        "tp": 11
+      }
+    },
+    "cross_validation": {
+      "Logistic Regression": {
+        "cv_accuracy": 0.8371428571428572,
+        "test_accuracy": 0.7777777777777778,
+        "best_params": {
+          "model__C": 1
+        }
+      },
+      "SVM": {
+        "cv_accuracy": 0.8228571428571427,
+        "test_accuracy": 0.7777777777777778,
+        "best_params": {
+          "model__C": 0.1,
+          "model__kernel": "linear"
+        }
+      },
+      "KNN": {
+        "cv_accuracy": 0.6942857142857143,
+        "test_accuracy": 0.6666666666666666,
+        "best_params": {
+          "model__n_neighbors": 3,
+          "model__weights": "uniform"
+        }
+      },
+      "Decision Tree": {
+        "cv_accuracy": 0.877142857142857,
+        "test_accuracy": 0.8333333333333334,
+        "best_params": {
+          "criterion": "gini",
+          "max_depth": 5,
+          "min_samples_leaf": 1
+        }
+      }
+    },
+    "best_by_cv_accuracy": "Decision Tree",
+    "best_confusion_matrix": [
+      [
+        4,
+        2
+      ],
+      [
+        1,
+        11
+      ]
+    ]
+  }
+}

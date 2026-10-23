@@ -1,0 +1,12 @@
+Orbit,launches,success_rate
+SSO,5,1.0
+HEO,1,1.0
+GEO,1,1.0
+ES-L1,1,1.0
+VLEO,14,0.857
+LEO,7,0.714
+PO,9,0.667
+MEO,3,0.667
+ISS,21,0.619
+GTO,27,0.519
+SO,1,0.0
