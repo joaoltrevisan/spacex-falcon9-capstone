@@ -1,14 +1,14 @@
 # IBM Applied Data Science Capstone - Falcon 9 Landing Prediction
 
-**Current submission:** [18-page final PDF](reports/Capstone_Entrega_Final.pdf).
+**Current submission:** [40-slide final PDF](reports/Capstone_Entrega_Final.pdf).
 
 Public repository: https://github.com/joaoltrevisan/spacex-falcon9-capstone
 
-The current compact presentation places classifier evaluation on page 2, Folium evidence on pages 3-4, Dash evidence on pages 5-6, conclusions on page 7, and full laboratory URLs on pages 8-10. It retains all six EDA charts and all ten SQL queries/results.
+The current presentation follows the IBM template sequence: dedicated slides for each of the six EDA charts, all ten SQL questions, three Folium views, three Dash results, four classifiers, and the confusion matrix. It includes data collection, scraping, wrangling and model flowcharts, plus the direct URLs of all notebooks.
 
 The PDF uses visible, selectable text, clickable repository/notebook links, six EDA charts, all ten SQL laboratory queries and results, three Folium screenshots, three Dash screenshots, model comparison, confusion matrix and conclusions. Seven notebooks have been executed without cell errors.
 
-The older `Capstone_Final_Revisado.pdf` and `Relatorio_Capstone.pdf`, `.pptx` and `.md` are superseded historical drafts; they do not contain this correction. Do not use them for the current submission. The current PDF source is `src/build_compact_submission.py`; the earlier presentation generators are legacy drafts.
+The older `Capstone_Final_Revisado.pdf` and `Relatorio_Capstone.pdf`, `.pptx` and `.md` are superseded historical drafts; they do not contain this correction. Do not use them for the current submission. The current PDF source is `src/build_template_aligned.py`; the earlier presentation generators are legacy drafts.
 
 ## Evidence and data boundaries
 
@@ -36,7 +36,7 @@ python src/scrape_wikipedia.py
 python src/analyze_model.py
 python src/sql_lab.py
 python src/build_folium_map.py
-python src/build_compact_submission.py
+python src/build_template_aligned.py
 python src/dash_app.py
 ```
 
